@@ -1,7 +1,11 @@
 # Pong-Game-using-Cpp
 The Pong Game implemented in C++ is a recreation of the classic arcade game, where two paddles and a ball simulate a table tennis match. The game is a simple yet engaging demonstration of 2D graphics, collision detection, and game mechanics.
 
+<<<<<<< HEAD
 ## Key learning points
+=======
+# Key learning points
+>>>>>>> 848ba02d4c452a139dd8d2fac614747f24f75fb6
 1. Movement
 2. Controls
 3. Collision Detection
@@ -21,4 +25,8 @@ The Pong Game implemented in C++ is a recreation of the classic arcade game, whe
 5. Move the player's paddle
 6. Move the CPU paddle with Artificial Intelligence
 7. Check for a COIIieinn wi+h +hA
+<<<<<<< HEAD
 8. Add scoring
+=======
+8. Add scoring
+>>>>>>> 848ba02d4c452a139dd8d2fac614747f24f75fb6
