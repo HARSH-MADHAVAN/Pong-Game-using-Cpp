@@ -22,3 +22,10 @@ The Pong Game implemented in C++ is a recreation of the classic arcade game, whe
 6. Move the CPU paddle with Artificial Intelligence
 7. Check for a COIIieinn wi+h +hA
 8. Add scoring
+
+## Game Loop
+1. Check for events
+2. Update the positions of the game objects
+3. Draw the game objects in their new positions
+
+
