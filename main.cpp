@@ -13,14 +13,18 @@ int main () {
 // function to create a window    
     // InitWindow(width, height, title)
     InitWindow(screen_width, screen_height, "Ping Pong!!"); 
-    SetTargetFPS(60); // defines the speed at which the game will work, if not defined it will work according to your computers speed.
+    SetTargetFPS(60); // defines the speed(number of frames per second) at which the game will work, if not defined it will work according to your computers speed.
 
 // Game Loop(Step 1)
     while (WindowShouldClose() == false) // this function returns true is the esc button is pressed of the window is closed
     {
         BeginDrawing();
-// Drawing
+
+// Drawing Ball
         DrawCircle(screen_width / 2, screen_height / 2, 20, WHITE);
+// Drawing player rectangles
+        DrawRectangle(10, screen_height / 2 - 60, 25,120, WHITE);
+        DrawRectangle(screen_width - 35, screen_height / 2 - 60, 25, 120, WHITE);
         EndDrawing();
     }
     
