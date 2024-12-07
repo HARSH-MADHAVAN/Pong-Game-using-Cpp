@@ -10,10 +10,12 @@ int main () {
     const int screen_width = 1280;
     const int screen_height = 800;
 
+// function to create a window    
     // InitWindow(width, height, title)
-    InitWindow(screen_width, screen_height, "Ping Pong!!"); // function to create a window
+    InitWindow(screen_width, screen_height, "Ping Pong!!"); 
     SetTargetFPS(60); // defines the speed at which the game will work, if not defined it will work according to your computers speed.
 
+// Game Loop(Step 1)
     while (WindowShouldClose() == false) // this function returns true is the esc button is pressed of the window is closed
     {
         BeginDrawing();
@@ -27,3 +29,8 @@ int main () {
 }
 
 // To run the game press F5
+
+void DrawRectangle(int posX, int posy, int width, int height, Color color);
+void DrawCircle(int centerX, int center Y, float radius, Color color);
+void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color);
+void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color color);
