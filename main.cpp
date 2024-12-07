@@ -19,7 +19,8 @@ int main () {
     while (WindowShouldClose() == false) // this function returns true is the esc button is pressed of the window is closed
     {
         BeginDrawing();
-
+// Drawing the center line
+        DrawLine(screen_width / 2, 0, screen_width / 2, screen_height, WHITE);
 // Drawing Ball
         DrawCircle(screen_width / 2, screen_height / 2, 20, WHITE);
 // Drawing player rectangles
