@@ -31,13 +31,26 @@ void Update() {
 
 class Paddle {
 public:
-float x, y;
-float width, height;
-int speed;
+    float x, y;
+    float width, height;
+    int speed;
 
-void Draw() {
-    DrawRectangle(x, y, width, height, WHITE);
-}
+    void Draw() {
+        DrawRectangle(x, y, width, height, WHITE);
+    }
+
+    void Update() {
+        if (IsKeyDown(KEY_UP))
+        {
+            y = y - speed;
+        }
+        if (IsKeyDown(KEY_DOWN))
+        {
+            y = y + speed;
+        }
+        
+    }
+
 };
 
 Ball ball;
@@ -74,6 +87,7 @@ int main () {
 
         // Updating
         ball.Update();
+        player.Update();
 
         ClearBackground(BLACK);
         // Drawing the center line
