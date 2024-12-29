@@ -27,12 +27,22 @@ void Update() {
     if (x + radius >= GetScreenWidth()) //cpu wins
     {
         cpu_score++;
+        ResetBall();
     }
     if (x - radius <= 0)
     {
         player_score++;
+        ResetBall();
     }   
 }
+    void ResetBall(){
+        x = GetScreenHeight() / 2;
+        y = GetScreenWidth() / 2;
+
+        int speed_choices[2] = {-1, 1};
+        speed_x *= speed_choices[GetRandomValue(0, 1)];
+        speed_y *= speed_choices[GetRandomValue(0, 1)];
+    }
 };
 
 class Paddle {
