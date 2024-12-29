@@ -16,6 +16,16 @@ void Draw() {
 void Update() {
     x += speed_x;
     y += speed_y;
+    // Bouncing the ball by avoiding the collosion
+    if (y + radius >= GetScreenHeight() || y - radius <= 0)
+    {
+        speed_y *= -1;
+    }
+    if (x + radius >= GetScreenWidth() || x - radius <= 0)
+    {
+        speed_x *= -1;
+    } 
+    
 }
 
 };
@@ -31,7 +41,7 @@ int main () {
 
 // function to create a window    
     // InitWindow(width, height, title)
-    InitWindow(screen_width, screen_height, "Ping Pong!!"); 
+    InitWindow(screen_width, screen_height, "Ping Pong !!!"); 
     SetTargetFPS(60); // defines the speed(number of frames per second) at which the game will work, if not defined it will work according to your computers speed.
 
     ball.radius = 20;
