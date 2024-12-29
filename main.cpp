@@ -30,6 +30,20 @@ void Update() {
 };
 
 class Paddle {
+
+protected:
+    void LimitMovement(){
+         // fixing the motion area of the paddle (should not move outside the screen)
+        if (y <= 0)
+        {
+            y = 0;
+        }
+        if (y + height >= GetScreenHeight())
+        {
+            y = GetScreenHeight() - height;
+        }   
+    }
+
 public:
     float x, y;
     float width, height;
@@ -48,20 +62,23 @@ public:
         {
             y = y + speed;
         }
-        // fixing the motion area of the paddle (should not move outside the screen)
-        if (y <= 0)
-        {
-            y = 0;
-        }
-        if (y + height >= GetScreenHeight())
-        {
-            y = GetScreenHeight() - height;
-        }   
+    LimitMovement();
     }
 };
 
 class CpuPaddle : public Paddle{
-
+public:
+    void Update(int ball_y){
+        if (y + height/2 > ball_y)
+        {
+            y = y - speed;
+        }
+        if (y + height/2 <= ball_y)
+        {
+            y = y + speed;
+        }
+        LimitMovement();
+    }
 };
 
 Ball ball;
@@ -108,6 +125,7 @@ int main () {
         // Updating
         ball.Update();
         player.Update();
+        cpu.Update(ball.y);
 
         ClearBackground(BLACK);
         // Drawing the center line
