@@ -56,16 +56,17 @@ public:
         if (y + height >= GetScreenHeight())
         {
             y = GetScreenHeight() - height;
-        }
-        
-        
-        
+        }   
     }
+};
+
+class CpuPaddle : public Paddle{
 
 };
 
 Ball ball;
 Paddle player; //creating a player object
+CpuPaddle cpu; //creating a cpu player object
 
 int main () {
 
@@ -84,12 +85,20 @@ int main () {
     ball.y = screen_height / 2;
     ball.speed_x = 7;
     ball.speed_y = 7;
+
     // initializing the player object
     player.width = 25;
     player.height = 120;
     player.x = screen_width - player.width - 10;
     player.y = screen_height / 2 - player.height / 2;
     player.speed = 6;
+
+    // initializing the Cpu player object
+    cpu.height = 120;
+    cpu.width = 25;
+    cpu.x = 10;
+    cpu.y = screen_height / 2 - cpu.height / 2;
+    cpu.speed = 6;
 
     // Game Loop(Step 1)
     while (WindowShouldClose() == false) // this function returns true is the esc button is pressed of the window is closed
@@ -107,7 +116,7 @@ int main () {
         // Drawing Ball
         // DrawCircle(screen_width / 2, screen_height / 2, 20, WHITE);
 // Drawing player rectangles
-        DrawRectangle(10, screen_height / 2 - 60, 25,120, WHITE);
+        cpu.Draw();
         player.Draw(); //calling the player object
 
         EndDrawing();
