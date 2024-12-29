@@ -48,6 +48,17 @@ public:
         {
             y = y + speed;
         }
+        // fixing the motion area of the paddle (should not move outside the screen)
+        if (y <= 0)
+        {
+            y = 0;
+        }
+        if (y + height >= GetScreenHeight())
+        {
+            y = GetScreenHeight() - height;
+        }
+        
+        
         
     }
 
