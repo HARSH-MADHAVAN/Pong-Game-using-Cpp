@@ -163,7 +163,8 @@ int main () {
         DrawRectangle(screen_width / 2, 0, screen_width / 2, screen_height, Green);
         // Drawing the center line
         DrawLine(screen_width / 2, 0, screen_width / 2, screen_height, WHITE);
-        
+        // Drwaing circle in the center
+        DrawCircle(screen_width / 2, screen_height / 2, 150, Light_Green);
         ball.Draw();
         // Drawing Ball
         // DrawCircle(screen_width / 2, screen_height / 2, 20, WHITE);
