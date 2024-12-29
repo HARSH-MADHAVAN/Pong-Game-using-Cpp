@@ -3,6 +3,9 @@
 
 using namespace std;
 
+int player_score = 0;
+int cpu_score = 0;
+
 class Ball{
 public:
     float x, y;
@@ -21,11 +24,14 @@ void Update() {
     {
         speed_y *= -1;
     }
-    if (x + radius >= GetScreenWidth() || x - radius <= 0)
+    if (x + radius >= GetScreenWidth()) //cpu wins
     {
-        speed_x *= -1;
-    } 
-    
+        cpu_score++;
+    }
+    if (x - radius <= 0)
+    {
+        player_score++;
+    }   
 }
 };
 
@@ -145,9 +151,12 @@ int main () {
         // Drawing Ball
         // DrawCircle(screen_width / 2, screen_height / 2, 20, WHITE);
 // Drawing player rectangles
-        cpu.Draw();
+        cpu.Draw(); //calling the cpu player object
         player.Draw(); //calling the player object
 
+    // Score Board DrawText(text, Xpos, ypos, fontsize, color);
+        DrawText(TextFormat("%i", cpu_score), screen_width/4 -20, 20, 80, WHITE);
+        DrawText(TextFormat("%i", player_score), 3*screen_width/4 -20, 20, 80, WHITE); 
         EndDrawing();
     }
     
